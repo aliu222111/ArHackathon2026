@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "max_time_steps": 220,
+    "description": "Level 2: the short route from the parking bays to the main storage area runs straight through a quarantine rack holding two pods bound for a station 24 steps away. Pickups are compulsory, so both capacity-1 units get hijacked the moment they set foot there and three high-value near pods rot. Punishes ignoring forced pickups when choosing a path: one unit must take the 10-step detour to keep its carrying slot free."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Park",
+      "type": "travel"
+    },
+    {
+      "id": 1,
+      "name": "Storage-Quarantine",
+      "type": "storage"
+    },
+    {
+      "id": 2,
+      "name": "Storage-Main",
+      "type": "storage"
+    },
+    {
+      "id": 3,
+      "name": "Station-Near",
+      "type": "station"
+    },
+    {
+      "id": 4,
+      "name": "Station-Far",
+      "type": "station"
+    },
+    {
+      "id": 5,
+      "name": "Detour-1",
+      "type": "travel"
+    },
+    {
+      "id": 6,
+      "name": "Detour-2",
+      "type": "travel"
+    },
+    {
+      "id": 7,
+      "name": "Aisle-Far-1",
+      "type": "travel"
+    },
+    {
+      "id": 8,
+      "name": "Aisle-Far-2",
+      "type": "travel"
+    },
+    {
+      "id": 9,
+      "name": "Aisle-Far-3",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 5,
+      "weight": 4
+    },
+    {
+      "from_node": 5,
+      "to_node": 6,
+      "weight": 4
+    },
+    {
+      "from_node": 6,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 3,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 7,
+      "weight": 6
+    },
+    {
+      "from_node": 7,
+      "to_node": 8,
+      "weight": 6
+    },
+    {
+      "from_node": 8,
+      "to_node": 9,
+      "weight": 6
+    },
+    {
+      "from_node": 9,
+      "to_node": 4,
+      "weight": 6
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 0
+    },
+    {
+      "id": 1,
+      "start_node": 0
+    }
+  ],
+  "pods": [
+    {
+      "id": "X1",
+      "source_node": 1,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "X2",
+      "source_node": 1,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "P1",
+      "source_node": 2,
+      "destination_station": 3,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 2,
+      "destination_station": 3,
+      "entry_time": 0
+    },
+    {
+      "id": "P3",
+      "source_node": 2,
+      "destination_station": 3,
+      "entry_time": 6
+    },
+    {
+      "id": "P4",
+      "source_node": 2,
+      "destination_station": 3,
+      "entry_time": 18
+    }
+  ]
+}

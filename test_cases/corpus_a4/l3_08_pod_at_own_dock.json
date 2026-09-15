@@ -1,0 +1,155 @@
+{
+  "metadata": {
+    "max_time_steps": 220,
+    "description": "Level 3: two returned pods spawn on the single-dock stations they are addressed to (source_node == destination_station), mixed into four ordinary hauls. A unit standing on the dock when such a pod lands delivers it at duration 0 for free - but only if it does not move that step, and it must clear the capacity-1 dock immediately afterwards. Punishes both halves: idle rules that drive the unit off with the pod still aboard, and dock-camping that blocks the next delivery."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Storage-A",
+      "type": "storage"
+    },
+    {
+      "id": 1,
+      "name": "Aisle-1",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Station-1",
+      "type": "station",
+      "capacity": 1
+    },
+    {
+      "id": 3,
+      "name": "Aisle-2",
+      "type": "travel"
+    },
+    {
+      "id": 4,
+      "name": "Station-2",
+      "type": "station",
+      "capacity": 1
+    },
+    {
+      "id": 5,
+      "name": "Park-1",
+      "type": "travel"
+    },
+    {
+      "id": 6,
+      "name": "Park-2",
+      "type": "travel"
+    },
+    {
+      "id": 7,
+      "name": "Storage-B",
+      "type": "storage"
+    },
+    {
+      "id": 8,
+      "name": "Aisle-3",
+      "type": "travel"
+    },
+    {
+      "id": 9,
+      "name": "Junction",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 9,
+      "weight": 2
+    },
+    {
+      "from_node": 9,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 9,
+      "to_node": 3,
+      "weight": 2
+    },
+    {
+      "from_node": 3,
+      "to_node": 4,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 5,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 6,
+      "weight": 2
+    },
+    {
+      "from_node": 7,
+      "to_node": 8,
+      "weight": 2
+    },
+    {
+      "from_node": 8,
+      "to_node": 9,
+      "weight": 2
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 2
+    },
+    {
+      "id": 1,
+      "start_node": 5
+    }
+  ],
+  "pods": [
+    {
+      "id": "R1",
+      "source_node": 2,
+      "destination_station": 2,
+      "entry_time": 0
+    },
+    {
+      "id": "P1",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 7,
+      "destination_station": 4,
+      "entry_time": 4
+    },
+    {
+      "id": "R2",
+      "source_node": 4,
+      "destination_station": 4,
+      "entry_time": 12
+    },
+    {
+      "id": "P3",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 18
+    },
+    {
+      "id": "P4",
+      "source_node": 7,
+      "destination_station": 2,
+      "entry_time": 26
+    }
+  ]
+}

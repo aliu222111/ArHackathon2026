@@ -1,0 +1,196 @@
+{
+  "metadata": {
+    "max_time_steps": 240,
+    "description": "Level 3: one capacity-1 waypoint is the only approach to BOTH stations, and Station-1 has a single dock while Station-2 has three. Punishes queueing at the shared approach: a unit that rolls up to the approach and finds the single dock busy parks there and shuts off all Station-2 traffic behind it. The fix is to hold one node further back, at the junction, until the dock is actually free."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Storage-C",
+      "type": "storage"
+    },
+    {
+      "id": 1,
+      "name": "Junction",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Approach",
+      "type": "travel",
+      "capacity": 1
+    },
+    {
+      "id": 3,
+      "name": "Station-1",
+      "type": "station",
+      "capacity": 1
+    },
+    {
+      "id": 4,
+      "name": "Aisle-2",
+      "type": "travel"
+    },
+    {
+      "id": 5,
+      "name": "Station-2",
+      "type": "station",
+      "capacity": 3
+    },
+    {
+      "id": 6,
+      "name": "Park-1",
+      "type": "travel"
+    },
+    {
+      "id": 7,
+      "name": "Park-2",
+      "type": "travel"
+    },
+    {
+      "id": 8,
+      "name": "Park-3",
+      "type": "travel"
+    },
+    {
+      "id": 9,
+      "name": "Park-4",
+      "type": "travel"
+    },
+    {
+      "id": 10,
+      "name": "Storage-D",
+      "type": "storage"
+    },
+    {
+      "id": 11,
+      "name": "Aisle-3",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 3,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 4,
+      "weight": 3
+    },
+    {
+      "from_node": 4,
+      "to_node": 5,
+      "weight": 3
+    },
+    {
+      "from_node": 0,
+      "to_node": 6,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 7,
+      "weight": 2
+    },
+    {
+      "from_node": 10,
+      "to_node": 8,
+      "weight": 2
+    },
+    {
+      "from_node": 10,
+      "to_node": 9,
+      "weight": 2
+    },
+    {
+      "from_node": 10,
+      "to_node": 11,
+      "weight": 2
+    },
+    {
+      "from_node": 11,
+      "to_node": 1,
+      "weight": 3
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 6
+    },
+    {
+      "id": 1,
+      "start_node": 7
+    },
+    {
+      "id": 2,
+      "start_node": 8
+    },
+    {
+      "id": 3,
+      "start_node": 9
+    }
+  ],
+  "pods": [
+    {
+      "id": "P1",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 0,
+      "destination_station": 5,
+      "entry_time": 0
+    },
+    {
+      "id": "P3",
+      "source_node": 10,
+      "destination_station": 3,
+      "entry_time": 0
+    },
+    {
+      "id": "P4",
+      "source_node": 10,
+      "destination_station": 5,
+      "entry_time": 2
+    },
+    {
+      "id": "P5",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 8
+    },
+    {
+      "id": "P6",
+      "source_node": 0,
+      "destination_station": 5,
+      "entry_time": 8
+    },
+    {
+      "id": "P7",
+      "source_node": 10,
+      "destination_station": 3,
+      "entry_time": 16
+    },
+    {
+      "id": "P8",
+      "source_node": 10,
+      "destination_station": 5,
+      "entry_time": 16
+    }
+  ]
+}

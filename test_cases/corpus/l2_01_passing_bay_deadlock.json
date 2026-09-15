@@ -1,0 +1,125 @@
+{
+  "metadata": {
+    "max_time_steps": 220,
+    "description": "Level 2: a single-lane cross aisle whose three waypoints each have capacity 1, with one passing bay hanging off the middle waypoint. Two units must swap ends. Punishes any router that only ever takes hops which strictly reduce distance to goal: the two units meet nose to nose on the capacity-1 waypoints and both wait forever. The win is to pull one unit into the bay - a move that temporarily increases its distance to goal - and let the other pass."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Storage-W",
+      "type": "storage"
+    },
+    {
+      "id": 1,
+      "name": "Aisle-W",
+      "type": "travel",
+      "capacity": 1
+    },
+    {
+      "id": 2,
+      "name": "Bay-Junction",
+      "type": "travel",
+      "capacity": 1
+    },
+    {
+      "id": 3,
+      "name": "Aisle-E",
+      "type": "travel",
+      "capacity": 1
+    },
+    {
+      "id": 4,
+      "name": "Storage-E",
+      "type": "storage"
+    },
+    {
+      "id": 5,
+      "name": "Passing-Bay",
+      "type": "travel",
+      "capacity": 1
+    },
+    {
+      "id": 6,
+      "name": "Station-W",
+      "type": "station"
+    },
+    {
+      "id": 7,
+      "name": "Station-E",
+      "type": "station"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 3,
+      "weight": 2
+    },
+    {
+      "from_node": 3,
+      "to_node": 4,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 5,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 6,
+      "weight": 2
+    },
+    {
+      "from_node": 4,
+      "to_node": 7,
+      "weight": 2
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 0
+    },
+    {
+      "id": 1,
+      "start_node": 4
+    }
+  ],
+  "pods": [
+    {
+      "id": "P1",
+      "source_node": 4,
+      "destination_station": 6,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 0,
+      "destination_station": 7,
+      "entry_time": 0
+    },
+    {
+      "id": "P3",
+      "source_node": 4,
+      "destination_station": 6,
+      "entry_time": 24
+    },
+    {
+      "id": "P4",
+      "source_node": 0,
+      "destination_station": 7,
+      "entry_time": 24
+    }
+  ]
+}

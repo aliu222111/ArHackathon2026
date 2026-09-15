@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "max_time_steps": 190,
+    "description": "Level 1: two rack loops joined at a hub, with a station hanging off each loop. Six pods alternate between the loops and two of them cross to the far station. Punishes FIFO service: taking the pods in arrival order forces four hub crossings, while grouping by loop halves the travel."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Hub",
+      "type": "travel"
+    },
+    {
+      "id": 1,
+      "name": "W-North",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Storage-W",
+      "type": "storage"
+    },
+    {
+      "id": 3,
+      "name": "W-South",
+      "type": "travel"
+    },
+    {
+      "id": 4,
+      "name": "Station-W",
+      "type": "station"
+    },
+    {
+      "id": 5,
+      "name": "E-North",
+      "type": "travel"
+    },
+    {
+      "id": 6,
+      "name": "Storage-E",
+      "type": "storage"
+    },
+    {
+      "id": 7,
+      "name": "E-South",
+      "type": "travel"
+    },
+    {
+      "id": 8,
+      "name": "Station-E",
+      "type": "station"
+    },
+    {
+      "id": 9,
+      "name": "W-Link",
+      "type": "travel"
+    },
+    {
+      "id": 10,
+      "name": "E-Link",
+      "type": "travel"
+    },
+    {
+      "id": 11,
+      "name": "Cross-Aisle",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 9,
+      "weight": 2
+    },
+    {
+      "from_node": 9,
+      "to_node": 3,
+      "weight": 2
+    },
+    {
+      "from_node": 3,
+      "to_node": 0,
+      "weight": 2
+    },
+    {
+      "from_node": 3,
+      "to_node": 4,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 5,
+      "weight": 2
+    },
+    {
+      "from_node": 5,
+      "to_node": 6,
+      "weight": 2
+    },
+    {
+      "from_node": 6,
+      "to_node": 10,
+      "weight": 2
+    },
+    {
+      "from_node": 10,
+      "to_node": 7,
+      "weight": 2
+    },
+    {
+      "from_node": 7,
+      "to_node": 0,
+      "weight": 2
+    },
+    {
+      "from_node": 7,
+      "to_node": 8,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 11,
+      "weight": 7
+    },
+    {
+      "from_node": 11,
+      "to_node": 6,
+      "weight": 7
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 0
+    }
+  ],
+  "pods": [
+    {
+      "id": "P1",
+      "source_node": 2,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 6,
+      "destination_station": 8,
+      "entry_time": 0
+    },
+    {
+      "id": "P3",
+      "source_node": 2,
+      "destination_station": 8,
+      "entry_time": 8
+    },
+    {
+      "id": "P4",
+      "source_node": 6,
+      "destination_station": 4,
+      "entry_time": 16
+    },
+    {
+      "id": "P5",
+      "source_node": 2,
+      "destination_station": 4,
+      "entry_time": 26
+    },
+    {
+      "id": "P6",
+      "source_node": 6,
+      "destination_station": 8,
+      "entry_time": 34
+    }
+  ]
+}

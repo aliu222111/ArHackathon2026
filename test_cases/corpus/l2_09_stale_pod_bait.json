@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "max_time_steps": 260,
+    "description": "Level 2: two pods sit 22 steps away at a remote storage area from t=0 while a steady stream of pods lands at the near storage area every five steps. Two units. Punishes an age bonus with no cap: once the remote pods are old enough the bonus outbids every fresh pod and BOTH units set off on a 48-step round trip, stranding the stream. The right answer sends exactly one unit and only once."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Storage-Near",
+      "type": "storage"
+    },
+    {
+      "id": 1,
+      "name": "Aisle-N1",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Station-Near",
+      "type": "station"
+    },
+    {
+      "id": 3,
+      "name": "Long-1",
+      "type": "travel"
+    },
+    {
+      "id": 4,
+      "name": "Long-2",
+      "type": "travel"
+    },
+    {
+      "id": 5,
+      "name": "Long-3",
+      "type": "travel"
+    },
+    {
+      "id": 6,
+      "name": "Storage-Far",
+      "type": "storage"
+    },
+    {
+      "id": 7,
+      "name": "Station-Far",
+      "type": "station"
+    },
+    {
+      "id": 8,
+      "name": "Aisle-N2",
+      "type": "travel"
+    },
+    {
+      "id": 9,
+      "name": "Park",
+      "type": "travel"
+    },
+    {
+      "id": 10,
+      "name": "Long-4",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 8,
+      "weight": 3
+    },
+    {
+      "from_node": 8,
+      "to_node": 2,
+      "weight": 3
+    },
+    {
+      "from_node": 0,
+      "to_node": 3,
+      "weight": 5
+    },
+    {
+      "from_node": 3,
+      "to_node": 4,
+      "weight": 5
+    },
+    {
+      "from_node": 4,
+      "to_node": 10,
+      "weight": 5
+    },
+    {
+      "from_node": 10,
+      "to_node": 5,
+      "weight": 5
+    },
+    {
+      "from_node": 5,
+      "to_node": 6,
+      "weight": 2
+    },
+    {
+      "from_node": 6,
+      "to_node": 7,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 9,
+      "weight": 2
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 0
+    },
+    {
+      "id": 1,
+      "start_node": 9
+    }
+  ],
+  "pods": [
+    {
+      "id": "F1",
+      "source_node": 6,
+      "destination_station": 7,
+      "entry_time": 0
+    },
+    {
+      "id": "F2",
+      "source_node": 6,
+      "destination_station": 7,
+      "entry_time": 0
+    },
+    {
+      "id": "N1",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 5
+    },
+    {
+      "id": "N2",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 10
+    },
+    {
+      "id": "N3",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 15
+    },
+    {
+      "id": "N4",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 20
+    },
+    {
+      "id": "N5",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 25
+    },
+    {
+      "id": "N6",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 30
+    },
+    {
+      "id": "N7",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 35
+    },
+    {
+      "id": "N8",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 40
+    },
+    {
+      "id": "N9",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 45
+    },
+    {
+      "id": "N10",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 50
+    },
+    {
+      "id": "N11",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 55
+    },
+    {
+      "id": "N12",
+      "source_node": 0,
+      "destination_station": 2,
+      "entry_time": 60
+    }
+  ]
+}

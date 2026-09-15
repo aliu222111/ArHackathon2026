@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "max_time_steps": 240,
+    "description": "Level 2: the provided narrow-bridge case, scaled. One capacity-1 bridge of weight 12 is the short way to the station; a two-hop detour costs 14. Three units, six pods, and the bridge is shared by loaded outbound and empty returning traffic. Punishes wait-when-blocked: the queue behind the bridge grows to 24+ steps while a 14-step detour sits unused. This is the single highest-value congestion lesson in the whole set."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Storage-W",
+      "type": "storage"
+    },
+    {
+      "id": 1,
+      "name": "Junction-W",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Detour-Mid",
+      "type": "travel"
+    },
+    {
+      "id": 3,
+      "name": "Junction-E",
+      "type": "travel"
+    },
+    {
+      "id": 4,
+      "name": "Station-E",
+      "type": "station"
+    },
+    {
+      "id": 5,
+      "name": "Storage-W2",
+      "type": "storage"
+    },
+    {
+      "id": 6,
+      "name": "Park-W",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 5,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 3,
+      "weight": 12,
+      "capacity": 1
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 7
+    },
+    {
+      "from_node": 2,
+      "to_node": 3,
+      "weight": 7
+    },
+    {
+      "from_node": 3,
+      "to_node": 4,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 6,
+      "weight": 2
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 0
+    },
+    {
+      "id": 1,
+      "start_node": 5
+    },
+    {
+      "id": 2,
+      "start_node": 6
+    }
+  ],
+  "pods": [
+    {
+      "id": "P1",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 5,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "P3",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 2
+    },
+    {
+      "id": "P4",
+      "source_node": 5,
+      "destination_station": 4,
+      "entry_time": 8
+    },
+    {
+      "id": "P5",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 16
+    },
+    {
+      "id": "P6",
+      "source_node": 5,
+      "destination_station": 4,
+      "entry_time": 24
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "max_time_steps": 220,
+    "description": "Level 3: one capacity-1 station reachable two ways - a 9-step route whose final approach is a single weight-8 aisle, and a 10-step route whose final approach is weight 2. Inbound units reserve the dock for the whole traversal, so the 'shorter' route holds the only dock for 8 steps per pod and throttles four units to one delivery per 8 steps. Punishes picking routes by total length instead of by how long the last hop occupies the bottleneck."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Storage-A",
+      "type": "storage"
+    },
+    {
+      "id": 1,
+      "name": "Aisle-Short",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Dock-Approach",
+      "type": "travel"
+    },
+    {
+      "id": 3,
+      "name": "Station-1",
+      "type": "station",
+      "capacity": 1
+    },
+    {
+      "id": 4,
+      "name": "Storage-B",
+      "type": "storage"
+    },
+    {
+      "id": 5,
+      "name": "Aisle-West",
+      "type": "travel"
+    },
+    {
+      "id": 6,
+      "name": "Park-1",
+      "type": "travel"
+    },
+    {
+      "id": 7,
+      "name": "Park-2",
+      "type": "travel"
+    },
+    {
+      "id": 8,
+      "name": "Park-3",
+      "type": "travel"
+    },
+    {
+      "id": 9,
+      "name": "Aisle-North",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 1
+    },
+    {
+      "from_node": 1,
+      "to_node": 3,
+      "weight": 8
+    },
+    {
+      "from_node": 0,
+      "to_node": 9,
+      "weight": 4
+    },
+    {
+      "from_node": 9,
+      "to_node": 5,
+      "weight": 2
+    },
+    {
+      "from_node": 5,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 3,
+      "weight": 2
+    },
+    {
+      "from_node": 4,
+      "to_node": 5,
+      "weight": 2
+    },
+    {
+      "from_node": 4,
+      "to_node": 0,
+      "weight": 5
+    },
+    {
+      "from_node": 0,
+      "to_node": 6,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 7,
+      "weight": 2
+    },
+    {
+      "from_node": 0,
+      "to_node": 8,
+      "weight": 2
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 6
+    },
+    {
+      "id": 1,
+      "start_node": 7
+    },
+    {
+      "id": 2,
+      "start_node": 8
+    },
+    {
+      "id": 3,
+      "start_node": 0
+    }
+  ],
+  "pods": [
+    {
+      "id": "P1",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 0
+    },
+    {
+      "id": "P3",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 2
+    },
+    {
+      "id": "P4",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 4
+    },
+    {
+      "id": "P5",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 8
+    },
+    {
+      "id": "P6",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 12
+    },
+    {
+      "id": "P7",
+      "source_node": 4,
+      "destination_station": 3,
+      "entry_time": 6
+    },
+    {
+      "id": "P8",
+      "source_node": 4,
+      "destination_station": 3,
+      "entry_time": 16
+    }
+  ]
+}

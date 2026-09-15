@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "max_time_steps": 130,
+    "description": "Level 1: a returned pod spawns on the very dock it belongs to (source_node == destination_station) with the unit already standing there. Waiting zero steps delivers it at duration 0 for a full 100 points. Punishes drivers whose idle/parking rule fires whenever the goal equals the current node: they drive the unit off the dock carrying the pod and have to come back."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Station-1",
+      "type": "station"
+    },
+    {
+      "id": 1,
+      "name": "Approach",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Storage-A",
+      "type": "storage"
+    },
+    {
+      "id": 3,
+      "name": "Aisle-1",
+      "type": "travel"
+    },
+    {
+      "id": 4,
+      "name": "Station-2",
+      "type": "station"
+    },
+    {
+      "id": 5,
+      "name": "Storage-B",
+      "type": "storage"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 6
+    },
+    {
+      "from_node": 2,
+      "to_node": 3,
+      "weight": 2
+    },
+    {
+      "from_node": 3,
+      "to_node": 4,
+      "weight": 3
+    },
+    {
+      "from_node": 5,
+      "to_node": 1,
+      "weight": 4
+    },
+    {
+      "from_node": 5,
+      "to_node": 3,
+      "weight": 4
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 0
+    }
+  ],
+  "pods": [
+    {
+      "id": "R1",
+      "source_node": 0,
+      "destination_station": 0,
+      "entry_time": 0
+    },
+    {
+      "id": "P1",
+      "source_node": 2,
+      "destination_station": 0,
+      "entry_time": 0
+    },
+    {
+      "id": "R2",
+      "source_node": 4,
+      "destination_station": 4,
+      "entry_time": 14
+    },
+    {
+      "id": "P2",
+      "source_node": 5,
+      "destination_station": 4,
+      "entry_time": 20
+    },
+    {
+      "id": "P3",
+      "source_node": 2,
+      "destination_station": 4,
+      "entry_time": 34
+    }
+  ]
+}

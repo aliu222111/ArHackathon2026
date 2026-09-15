@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "max_time_steps": 240,
+    "description": "Level 3: capacity-4 units, a capacity-1 station, and pods split two-and-two across two storage areas so that filling a unit requires visiting both. The detour between the racks costs 6 steps; a second trip through the single dock costs far more. Punishes a fixed detour-slack threshold that refuses any diversion longer than a few steps - the dock, not the aisle, is the scarce resource here."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Storage-A",
+      "type": "storage"
+    },
+    {
+      "id": 1,
+      "name": "Storage-B",
+      "type": "storage"
+    },
+    {
+      "id": 2,
+      "name": "Junction",
+      "type": "travel"
+    },
+    {
+      "id": 3,
+      "name": "Dock-Approach",
+      "type": "travel"
+    },
+    {
+      "id": 4,
+      "name": "Station-1",
+      "type": "station",
+      "capacity": 1
+    },
+    {
+      "id": 5,
+      "name": "Park-1",
+      "type": "travel"
+    },
+    {
+      "id": 6,
+      "name": "Park-2",
+      "type": "travel"
+    },
+    {
+      "id": 7,
+      "name": "Aisle-A",
+      "type": "travel"
+    },
+    {
+      "id": 8,
+      "name": "Aisle-B",
+      "type": "travel"
+    },
+    {
+      "id": 9,
+      "name": "Yard",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 7,
+      "weight": 2
+    },
+    {
+      "from_node": 7,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 8,
+      "weight": 2
+    },
+    {
+      "from_node": 8,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 3,
+      "weight": 3
+    },
+    {
+      "from_node": 3,
+      "to_node": 4,
+      "weight": 3
+    },
+    {
+      "from_node": 0,
+      "to_node": 5,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 6,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 9,
+      "weight": 2
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 5,
+      "capacity": 4
+    },
+    {
+      "id": 1,
+      "start_node": 6,
+      "capacity": 4
+    }
+  ],
+  "pods": [
+    {
+      "id": "A1",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "A2",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "B1",
+      "source_node": 1,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "B2",
+      "source_node": 1,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "A3",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 26
+    },
+    {
+      "id": "A4",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 26
+    },
+    {
+      "id": "B3",
+      "source_node": 1,
+      "destination_station": 4,
+      "entry_time": 26
+    },
+    {
+      "id": "B4",
+      "source_node": 1,
+      "destination_station": 4,
+      "entry_time": 26
+    },
+    {
+      "id": "A5",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 60
+    },
+    {
+      "id": "B5",
+      "source_node": 1,
+      "destination_station": 4,
+      "entry_time": 60
+    }
+  ]
+}

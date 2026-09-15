@@ -1,0 +1,164 @@
+{
+  "metadata": {
+    "max_time_steps": 170,
+    "description": "Level 1: single unit on a one-way perimeter loop with two one-way cross aisles (every edge bidirectional:false). Outbound to Station-1 is 6, the return is 10. Punishes any planner that builds an undirected adjacency from the edge list: it will emit moves against the traffic direction, which the referee silently discards, and the unit waits forever."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Storage-A",
+      "type": "storage"
+    },
+    {
+      "id": 1,
+      "name": "Aisle-N1",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Aisle-N2",
+      "type": "travel"
+    },
+    {
+      "id": 3,
+      "name": "Station-1",
+      "type": "station"
+    },
+    {
+      "id": 4,
+      "name": "Aisle-E",
+      "type": "travel"
+    },
+    {
+      "id": 5,
+      "name": "Aisle-S1",
+      "type": "travel"
+    },
+    {
+      "id": 6,
+      "name": "Storage-B",
+      "type": "storage"
+    },
+    {
+      "id": 7,
+      "name": "Aisle-W",
+      "type": "travel"
+    },
+    {
+      "id": 8,
+      "name": "Station-2",
+      "type": "station"
+    },
+    {
+      "id": 9,
+      "name": "Cross-Aisle",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 2,
+      "to_node": 3,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 3,
+      "to_node": 4,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 4,
+      "to_node": 5,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 5,
+      "to_node": 6,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 6,
+      "to_node": 7,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 7,
+      "to_node": 0,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 1,
+      "to_node": 9,
+      "weight": 3,
+      "bidirectional": false
+    },
+    {
+      "from_node": 9,
+      "to_node": 5,
+      "weight": 3,
+      "bidirectional": false
+    },
+    {
+      "from_node": 5,
+      "to_node": 8,
+      "weight": 2,
+      "bidirectional": false
+    },
+    {
+      "from_node": 8,
+      "to_node": 6,
+      "weight": 2,
+      "bidirectional": false
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 0
+    }
+  ],
+  "pods": [
+    {
+      "id": "P1",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 6,
+      "destination_station": 8,
+      "entry_time": 0
+    },
+    {
+      "id": "P3",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 18
+    },
+    {
+      "id": "P4",
+      "source_node": 6,
+      "destination_station": 3,
+      "entry_time": 30
+    }
+  ]
+}

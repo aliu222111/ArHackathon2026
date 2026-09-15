@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "max_time_steps": 240,
+    "description": "Level 3: a cross-docking floor. Pods arrive ON an inbound station node (source_node is typed 'station', never 'storage') and must be moved to one of two single-dock outbound stations; the one node typed 'storage' is an empty buffer rack. Punishes any driver that looks for work at storage nodes or parks idle units there - the work all happens at the inbound dock, and loitering on it burns one of its two slots."
+  },
+  "nodes": [
+    {
+      "id": 0,
+      "name": "Station-Inbound",
+      "type": "station",
+      "capacity": 2
+    },
+    {
+      "id": 1,
+      "name": "Aisle-1",
+      "type": "travel"
+    },
+    {
+      "id": 2,
+      "name": "Junction",
+      "type": "travel"
+    },
+    {
+      "id": 3,
+      "name": "Station-A",
+      "type": "station",
+      "capacity": 1
+    },
+    {
+      "id": 4,
+      "name": "Station-B",
+      "type": "station",
+      "capacity": 1
+    },
+    {
+      "id": 5,
+      "name": "Aisle-2",
+      "type": "travel"
+    },
+    {
+      "id": 6,
+      "name": "Aisle-3",
+      "type": "travel"
+    },
+    {
+      "id": 7,
+      "name": "Storage-Buffer",
+      "type": "storage"
+    },
+    {
+      "id": 8,
+      "name": "Park-1",
+      "type": "travel"
+    },
+    {
+      "id": 9,
+      "name": "Park-2",
+      "type": "travel"
+    },
+    {
+      "id": 10,
+      "name": "Aisle-4",
+      "type": "travel"
+    }
+  ],
+  "edges": [
+    {
+      "from_node": 0,
+      "to_node": 1,
+      "weight": 2
+    },
+    {
+      "from_node": 1,
+      "to_node": 2,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 5,
+      "weight": 2
+    },
+    {
+      "from_node": 5,
+      "to_node": 3,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 6,
+      "weight": 2
+    },
+    {
+      "from_node": 6,
+      "to_node": 4,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 7,
+      "weight": 3
+    },
+    {
+      "from_node": 7,
+      "to_node": 8,
+      "weight": 2
+    },
+    {
+      "from_node": 7,
+      "to_node": 9,
+      "weight": 2
+    },
+    {
+      "from_node": 2,
+      "to_node": 10,
+      "weight": 3
+    },
+    {
+      "from_node": 10,
+      "to_node": 4,
+      "weight": 3
+    }
+  ],
+  "drive_units": [
+    {
+      "id": 0,
+      "start_node": 8
+    },
+    {
+      "id": 1,
+      "start_node": 9
+    },
+    {
+      "id": 2,
+      "start_node": 7
+    }
+  ],
+  "pods": [
+    {
+      "id": "P1",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 0
+    },
+    {
+      "id": "P2",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 0
+    },
+    {
+      "id": "P3",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 6
+    },
+    {
+      "id": "P4",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 6
+    },
+    {
+      "id": "P5",
+      "source_node": 7,
+      "destination_station": 3,
+      "entry_time": 12
+    },
+    {
+      "id": "P6",
+      "source_node": 0,
+      "destination_station": 4,
+      "entry_time": 14
+    },
+    {
+      "id": "P7",
+      "source_node": 0,
+      "destination_station": 3,
+      "entry_time": 20
+    },
+    {
+      "id": "P8",
+      "source_node": 7,
+      "destination_station": 4,
+      "entry_time": 20
+    }
+  ]
+}
