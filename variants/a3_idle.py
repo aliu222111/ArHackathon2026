@@ -1,4 +1,5 @@
 """Session A3 candidate: base router + learned idle staging / pre-positioning.
+# team: vibe coders / alexliu22111@gmail.com
 
 Everything except ``_idle_move`` is inherited unchanged from the shared
 baseline (all-pairs Dijkstra + deterministic global greedy assignment).
